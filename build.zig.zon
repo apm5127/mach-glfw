@@ -1,6 +1,6 @@
 .{
     .name = .mach_glfw,
-    .version = "0.2.0",
+    .version = "0.2.1",
     .fingerprint = 0xa924846d9b909410,
     .paths = .{
         "src/",
@@ -12,9 +12,9 @@
         "README.md",
     },
     .dependencies = .{
-        .glfw = .{
-            .url = "git+https://github.com/der-teufel-programming/glfw.git#206deaa2485703ac700d0f3020a8854282aecdbb",
-            .hash = "glfw-0.0.0-bOgnngiqGQCt5HJK25zx1lf9emPYDNtEuQPYmrTCdOoN",
+        .glfw_zig = .{
+            .url = "git+https://github.com/apm5127/glfw.zig.git?ref=update-zig#12ae4e1f916dd96bdd5470a52c7044fd47ab1917",
+            .hash = "glfw_zig-1.0.1-NrvYo9nZGQDZ2P9r27NDnK7U2lUQFpsv5AhVi6QvHKl9",
         },
     },
 }

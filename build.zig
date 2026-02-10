@@ -1,11 +1,10 @@
-const builtin = @import("builtin");
-const std = @import("std");
+const builtin = @import("builtin"); const std = @import("std");
 
 pub fn build(b: *std.Build) !void {
     const optimize = b.standardOptimizeOption(.{});
     const target = b.standardTargetOptions(.{});
 
-    const glfw_dep = b.dependency("glfw", .{
+    const glfw_dep = b.dependency("glfw_zig", .{
         .target = target,
         .optimize = optimize,
     });
@@ -20,11 +19,15 @@ pub fn build(b: *std.Build) !void {
     const test_step = b.step("test", "Run library tests");
     const main_tests = b.addTest(.{
         .name = "glfw-tests",
-        .root_source_file = b.path("src/main.zig"),
-        .target = target,
-        .optimize = optimize,
+        .root_module = b.createModule(.{
+            .root_source_file = b.path("src/main.zig"),
+            .target = target,
+            .optimize = optimize,
+        })
     });
-    main_tests.linkLibrary(glfw_dep.artifact("glfw"));
+
+    main_tests.root_module.linkLibrary(glfw_dep.artifact("glfw"));
+
     b.installArtifact(main_tests);
     test_step.dependOn(&b.addRunArtifact(main_tests).step);
 
