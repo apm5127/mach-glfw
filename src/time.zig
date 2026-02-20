@@ -105,7 +105,7 @@ pub inline fn getTimerFrequency() u64 {
 }
 
 test "getTime" {
-    const glfw = @import("main.zig");
+    const glfw = @import("root.zig");
     defer glfw.clearError(); // clear any error we generate
     if (!glfw.init(.{})) {
         std.log.err("failed to initialize GLFW: {?s}", .{glfw.getErrorString()});
@@ -117,7 +117,7 @@ test "getTime" {
 }
 
 test "setTime" {
-    const glfw = @import("main.zig");
+    const glfw = @import("root.zig");
     defer glfw.clearError(); // clear any error we generate
     if (!glfw.init(.{})) {
         std.log.err("failed to initialize GLFW: {?s}", .{glfw.getErrorString()});
@@ -129,7 +129,7 @@ test "setTime" {
 }
 
 test "getTimerValue" {
-    const glfw = @import("main.zig");
+    const glfw = @import("root.zig");
     defer glfw.clearError(); // clear any error we generate
     if (!glfw.init(.{})) {
         std.log.err("failed to initialize GLFW: {?s}", .{glfw.getErrorString()});
@@ -141,7 +141,7 @@ test "getTimerValue" {
 }
 
 test "getTimerFrequency" {
-    const glfw = @import("main.zig");
+    const glfw = @import("root.zig");
     defer glfw.clearError(); // clear any error we generate
     if (!glfw.init(.{})) {
         std.log.err("failed to initialize GLFW: {?s}", .{glfw.getErrorString()});

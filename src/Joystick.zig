@@ -462,7 +462,7 @@ pub inline fn getGamepadState(self: Joystick) ?GamepadState {
 }
 
 test "present" {
-    const glfw = @import("main.zig");
+    const glfw = @import("root.zig");
     defer glfw.clearError(); // clear any error we generate
     if (!glfw.init(.{})) {
         std.log.err("failed to initialize GLFW: {?s}", .{glfw.getErrorString()});
@@ -475,7 +475,7 @@ test "present" {
 }
 
 test "getAxes" {
-    const glfw = @import("main.zig");
+    const glfw = @import("root.zig");
     defer glfw.clearError(); // clear any error we generate
     if (!glfw.init(.{})) {
         std.log.err("failed to initialize GLFW: {?s}", .{glfw.getErrorString()});
@@ -488,7 +488,7 @@ test "getAxes" {
 }
 
 test "getButtons" {
-    const glfw = @import("main.zig");
+    const glfw = @import("root.zig");
     defer glfw.clearError(); // clear any error we generate
     if (!glfw.init(.{})) {
         std.log.err("failed to initialize GLFW: {?s}", .{glfw.getErrorString()});
@@ -501,7 +501,7 @@ test "getButtons" {
 }
 
 test "getHats" {
-    const glfw = @import("main.zig");
+    const glfw = @import("root.zig");
     defer glfw.clearError(); // clear any error we generate
     if (!glfw.init(.{})) {
         std.log.err("failed to initialize GLFW: {?s}", .{glfw.getErrorString()});
@@ -521,7 +521,7 @@ test "getHats" {
 }
 
 test "getName" {
-    const glfw = @import("main.zig");
+    const glfw = @import("root.zig");
     defer glfw.clearError(); // clear any error we generate
     if (!glfw.init(.{})) {
         std.log.err("failed to initialize GLFW: {?s}", .{glfw.getErrorString()});
@@ -534,7 +534,7 @@ test "getName" {
 }
 
 test "getGUID" {
-    const glfw = @import("main.zig");
+    const glfw = @import("root.zig");
     defer glfw.clearError(); // clear any error we generate
     if (!glfw.init(.{})) {
         std.log.err("failed to initialize GLFW: {?s}", .{glfw.getErrorString()});
@@ -547,7 +547,7 @@ test "getGUID" {
 }
 
 test "setUserPointer_syntax" {
-    const glfw = @import("main.zig");
+    const glfw = @import("root.zig");
     defer glfw.clearError(); // clear any error we generate
     if (!glfw.init(.{})) {
         std.log.err("failed to initialize GLFW: {?s}", .{glfw.getErrorString()});
@@ -563,7 +563,7 @@ test "setUserPointer_syntax" {
 }
 
 test "getUserPointer_syntax" {
-    const glfw = @import("main.zig");
+    const glfw = @import("root.zig");
     defer glfw.clearError(); // clear any error we generate
     if (!glfw.init(.{})) {
         std.log.err("failed to initialize GLFW: {?s}", .{glfw.getErrorString()});
@@ -579,7 +579,7 @@ test "getUserPointer_syntax" {
 }
 
 test "setCallback" {
-    const glfw = @import("main.zig");
+    const glfw = @import("root.zig");
     defer glfw.clearError(); // clear any error we generate
     if (!glfw.init(.{})) {
         std.log.err("failed to initialize GLFW: {?s}", .{glfw.getErrorString()});
@@ -601,7 +601,7 @@ test "updateGamepadMappings_syntax" {
 }
 
 test "isGamepad" {
-    const glfw = @import("main.zig");
+    const glfw = @import("root.zig");
     defer glfw.clearError(); // clear any error we generate
     if (!glfw.init(.{})) {
         std.log.err("failed to initialize GLFW: {?s}", .{glfw.getErrorString()});
@@ -614,7 +614,7 @@ test "isGamepad" {
 }
 
 test "getGamepadName" {
-    const glfw = @import("main.zig");
+    const glfw = @import("root.zig");
     defer glfw.clearError(); // clear any error we generate
     if (!glfw.init(.{})) {
         std.log.err("failed to initialize GLFW: {?s}", .{glfw.getErrorString()});
@@ -627,7 +627,7 @@ test "getGamepadName" {
 }
 
 test "getGamepadState" {
-    const glfw = @import("main.zig");
+    const glfw = @import("root.zig");
     defer glfw.clearError(); // clear any error we generate
     if (!glfw.init(.{})) {
         std.log.err("failed to initialize GLFW: {?s}", .{glfw.getErrorString()});

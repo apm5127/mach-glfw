@@ -404,7 +404,7 @@ pub inline fn setCallback(comptime callback: ?fn (monitor: Monitor, event: Event
 }
 
 test "getAll" {
-    const glfw = @import("main.zig");
+    const glfw = @import("root.zig");
     defer glfw.clearError(); // clear any error we generate
     if (!glfw.init(.{})) {
         std.log.err("failed to initialize GLFW: {?s}", .{glfw.getErrorString()});
@@ -418,7 +418,7 @@ test "getAll" {
 }
 
 test "getPrimary" {
-    const glfw = @import("main.zig");
+    const glfw = @import("root.zig");
     defer glfw.clearError(); // clear any error we generate
     if (!glfw.init(.{})) {
         std.log.err("failed to initialize GLFW: {?s}", .{glfw.getErrorString()});
@@ -430,7 +430,7 @@ test "getPrimary" {
 }
 
 test "getPos" {
-    const glfw = @import("main.zig");
+    const glfw = @import("root.zig");
     defer glfw.clearError(); // clear any error we generate
     if (!glfw.init(.{})) {
         std.log.err("failed to initialize GLFW: {?s}", .{glfw.getErrorString()});
@@ -445,7 +445,7 @@ test "getPos" {
 }
 
 test "getWorkarea" {
-    const glfw = @import("main.zig");
+    const glfw = @import("root.zig");
     defer glfw.clearError(); // clear any error we generate
     if (!glfw.init(.{})) {
         std.log.err("failed to initialize GLFW: {?s}", .{glfw.getErrorString()});
@@ -460,7 +460,7 @@ test "getWorkarea" {
 }
 
 test "getPhysicalSize" {
-    const glfw = @import("main.zig");
+    const glfw = @import("root.zig");
     defer glfw.clearError(); // clear any error we generate
     if (!glfw.init(.{})) {
         std.log.err("failed to initialize GLFW: {?s}", .{glfw.getErrorString()});
@@ -475,7 +475,7 @@ test "getPhysicalSize" {
 }
 
 test "getContentScale" {
-    const glfw = @import("main.zig");
+    const glfw = @import("root.zig");
     defer glfw.clearError(); // clear any error we generate
     if (!glfw.init(.{})) {
         std.log.err("failed to initialize GLFW: {?s}", .{glfw.getErrorString()});
@@ -490,7 +490,7 @@ test "getContentScale" {
 }
 
 test "getName" {
-    const glfw = @import("main.zig");
+    const glfw = @import("root.zig");
     defer glfw.clearError(); // clear any error we generate
     if (!glfw.init(.{})) {
         std.log.err("failed to initialize GLFW: {?s}", .{glfw.getErrorString()});
@@ -505,7 +505,7 @@ test "getName" {
 }
 
 test "userPointer" {
-    const glfw = @import("main.zig");
+    const glfw = @import("root.zig");
     defer glfw.clearError(); // clear any error we generate
     if (!glfw.init(.{})) {
         std.log.err("failed to initialize GLFW: {?s}", .{glfw.getErrorString()});
@@ -525,7 +525,7 @@ test "userPointer" {
 }
 
 test "setCallback" {
-    const glfw = @import("main.zig");
+    const glfw = @import("root.zig");
     defer glfw.clearError(); // clear any error we generate
     if (!glfw.init(.{})) {
         std.log.err("failed to initialize GLFW: {?s}", .{glfw.getErrorString()});
@@ -542,7 +542,7 @@ test "setCallback" {
 }
 
 test "getVideoModes" {
-    const glfw = @import("main.zig");
+    const glfw = @import("root.zig");
     defer glfw.clearError(); // clear any error we generate
     if (!glfw.init(.{})) {
         std.log.err("failed to initialize GLFW: {?s}", .{glfw.getErrorString()});
@@ -561,7 +561,7 @@ test "getVideoModes" {
 }
 
 test "getVideoMode" {
-    const glfw = @import("main.zig");
+    const glfw = @import("root.zig");
     defer glfw.clearError(); // clear any error we generate
     if (!glfw.init(.{})) {
         std.log.err("failed to initialize GLFW: {?s}", .{glfw.getErrorString()});
@@ -577,7 +577,7 @@ test "getVideoMode" {
 
 test "set_getGammaRamp" {
     const allocator = testing.allocator;
-    const glfw = @import("main.zig");
+    const glfw = @import("root.zig");
     defer glfw.clearError(); // clear any error we generate
     if (!glfw.init(.{})) {
         std.log.err("failed to initialize GLFW: {?s}", .{glfw.getErrorString()});

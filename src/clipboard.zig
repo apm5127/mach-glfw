@@ -1,7 +1,5 @@
 const std = @import("std");
-
 const c = @import("c.zig").c;
-
 const internal_debug = @import("internal_debug.zig");
 
 /// Sets the clipboard to the specified string.
@@ -47,7 +45,7 @@ pub inline fn getClipboardString() ?[:0]const u8 {
 }
 
 test "setClipboardString" {
-    const glfw = @import("main.zig");
+    const glfw = @import("root.zig");
     defer glfw.clearError(); // clear any error we generate
     if (!glfw.init(.{})) {
         std.log.err("failed to initialize GLFW: {?s}", .{glfw.getErrorString()});
@@ -59,7 +57,7 @@ test "setClipboardString" {
 }
 
 test "getClipboardString" {
-    const glfw = @import("main.zig");
+    const glfw = @import("root.zig");
     defer glfw.clearError(); // clear any error we generate
     if (!glfw.init(.{})) {
         std.log.err("failed to initialize GLFW: {?s}", .{glfw.getErrorString()});

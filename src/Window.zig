@@ -5,7 +5,7 @@ const testing = std.testing;
 const mem = std.mem;
 const c = @import("c.zig").c;
 
-const glfw = @import("main.zig");
+const glfw = @import("root.zig");
 const Image = @import("Image.zig");
 const Monitor = @import("Monitor.zig");
 const Cursor = @import("Cursor.zig");

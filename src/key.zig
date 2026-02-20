@@ -242,7 +242,7 @@ pub const Key = enum(c_int) {
 };
 
 test "getName" {
-    const glfw = @import("main.zig");
+    const glfw = @import("root.zig");
     defer glfw.clearError(); // clear any error we generate
     if (!glfw.init(.{})) {
         std.log.err("failed to initialize GLFW: {?s}", .{glfw.getErrorString()});
@@ -254,7 +254,7 @@ test "getName" {
 }
 
 test "getScancode" {
-    const glfw = @import("main.zig");
+    const glfw = @import("root.zig");
     defer glfw.clearError(); // clear any error we generate
     if (!glfw.init(.{})) {
         std.log.err("failed to initialize GLFW: {?s}", .{glfw.getErrorString()});

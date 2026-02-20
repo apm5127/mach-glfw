@@ -245,7 +245,7 @@ pub inline fn createWindowSurface(vk_instance: anytype, window: Window, vk_alloc
 }
 
 test "vulkanSupported" {
-    const glfw = @import("main.zig");
+    const glfw = @import("root.zig");
     defer glfw.clearError(); // clear any error we generate
     if (!glfw.init(.{})) {
         std.log.err("failed to initialize GLFW: {?s}", .{glfw.getErrorString()});
@@ -257,7 +257,7 @@ test "vulkanSupported" {
 }
 
 test "getRequiredInstanceExtensions" {
-    const glfw = @import("main.zig");
+    const glfw = @import("root.zig");
     defer glfw.clearError(); // clear any error we generate
     if (!glfw.init(.{})) {
         std.log.err("failed to initialize GLFW: {?s}", .{glfw.getErrorString()});
@@ -269,7 +269,7 @@ test "getRequiredInstanceExtensions" {
 }
 
 test "getInstanceProcAddress" {
-    const glfw = @import("main.zig");
+    const glfw = @import("root.zig");
     defer glfw.clearError(); // clear any error we generate
     if (!glfw.init(.{})) {
         std.log.err("failed to initialize GLFW: {?s}", .{glfw.getErrorString()});

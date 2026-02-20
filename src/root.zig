@@ -506,7 +506,7 @@ pub inline fn rawMouseMotionSupported() bool {
     return c.glfwRawMouseMotionSupported() == c.GLFW_TRUE;
 }
 
-pub fn basicTest() !void {
+pub fn basicTest(io: std.Io) !void {
     defer clearError(); // clear any error we generate
     if (!init(.{})) {
         std.log.err("failed to initialize GLFW: {?s}", .{getErrorString()});
@@ -520,25 +520,25 @@ pub fn basicTest() !void {
     };
     defer window.destroy();
 
-    const start = std.time.milliTimestamp();
-    while (std.time.milliTimestamp() < start + 1000 and !window.shouldClose()) {
+    const start = std.Io.Clock.now(.real, io).toMilliseconds();
+    while (std.Io.Clock.now(.real, io).toMilliseconds() < start + 1000 and !window.shouldClose()) {
         c.glfwPollEvents();
     }
 }
 
 test {
-    std.testing.refAllDeclsRecursive(@This());
+    std.testing.refAllDecls(@This());
 }
 
 test "getVersionString" {
-    std.debug.print("\nGLFW version v{}.{}.{}\n", .{ version.major, version.minor, version.revision });
+    std.debug.print("\nGLFW version v{d}.{d}.{d}\n", .{ version.major, version.minor, version.revision });
     std.debug.print("\nstring: {s}\n", .{getVersionString()});
 }
 
 test "init" {
     _ = init(.{ .cocoa_chdir_resources = true });
     if (getErrorString()) |err| {
-        std.log.err("failed to initialize GLFW: {?s}", .{err});
+        std.log.err("failed to initialize GLFW: {s}", .{err});
         std.process.exit(1);
     }
     defer terminate();
@@ -590,5 +590,6 @@ test "rawMouseMotionSupported" {
 }
 
 test "basic" {
-    try basicTest();
+    const io = std.testing.io;
+    try basicTest(io);
 }
