@@ -13,8 +13,8 @@
     },
     .dependencies = .{
         .glfw_zig = .{
-            .url = "git+https://github.com/apm5127/glfw.zig.git?ref=update-zig#12ae4e1f916dd96bdd5470a52c7044fd47ab1917",
-            .hash = "glfw_zig-1.0.1-NrvYo9nZGQDZ2P9r27NDnK7U2lUQFpsv5AhVi6QvHKl9",
+            .url = "git+https://github.com/apm5127/glfw.zig.git?ref=zig-nightly#efe887d7734049bb1b397e9056d360b98f5fc01a",
+            .hash = "glfw_zig-1.0.0-NrvYo0vSGQDNUrCD4UrG9KuIzA5qrR0xm2atsiPodHxX",
         },
     },
 }
